@@ -58,7 +58,7 @@ function WorstUIEver() {
     <div className="w-screen h-screen bg-gradient-to-r from-[#41fc03] to-[#fc0377] flex items-center justify-center">
       <main className="flex items-center justify-center">
         <div className="items-center justify-center">
-          <h1 className="text-8xl">It's what it's</h1>
+          <h1 className="text-8xl">It&apos; what it&apos;s</h1>
           <Marquee className="rotate-45 z-1000">some words and stuff</Marquee>
           <form className="relative">
             <label htmlFor="email" className="block text-lg mb-4">
@@ -111,7 +111,7 @@ function WorstUIEver() {
       {isModalVisible && (
         <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white p-8 rounded shadow-lg text-center relative">
-            <h2 className="text-2xl text-black mb-4">Why haven't you submitted yet?</h2>
+            <h2 className="text-2xl text-black mb-4">Why haven&apos;t you submitted yet?</h2>
             <button
               className="bg-blue-500 text-white px-4 py-2 rounded mb-4"
               onClick={() => {}}
