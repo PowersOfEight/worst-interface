@@ -16,8 +16,8 @@ function WorstUIEver() {
 
   const handleInput = () => {
     if (inputRef.current){
-      const randomRotation = Math.floor(Math.random() * 360);
-      inputRef.current.style.transform = `rotate(${randomRotation}deg)`;
+      inputRef.current.style.transform = 
+        `rotate(${Math.floor(Math.random() * 360)}deg) translate(${Math.floor(Math.random() * 80)}vw,${Math.floor(Math.random()*80)}vh)`;
     }
   }
   
@@ -29,12 +29,17 @@ function WorstUIEver() {
       <main className='flex items-center justify-center'>
         <div className='items-center justify-center'>
         <h1 className="text-8xl rotate-[``]">It's what it's</h1>
-        <form className='flex items-center justify-center'>
+        <form className='relative'>
           <input 
             type="text" 
             ref={inputRef} 
             onInput={handleInput}
-            className='bg-transparent transition-transform duration-500 focus:rotate-180'>
+            className='bg-transparent transition-transform duration-500 focus:rotate-180 absolute'
+            style={{
+              left: '10vw',
+              top: '10vh',
+            }}
+            >
             </input>
         </form>
         </div>
