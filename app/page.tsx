@@ -1,23 +1,22 @@
-"use client"
-import { INTERCEPTION_ROUTE_REWRITE_MANIFEST } from 'next/dist/shared/lib/constants';
 import React, { useState, useRef } from 'react';
 
 function WorstUIEver() {
   const [counter, setCounter] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
   const [isPopupVisible, setPopupVisible] = useState(false);
-  const [rotation, setRotation] = useState(0);
+  // const submitRef = useRef<HTMLButtonElement>(null);
+  // const [rotation, setRotation] = useState(0);
 
-  const handleButtonClick = () => {
-    setCounter(counter + Math.floor(Math.random() * 100) - 50); // Unpredictable increments
-    setPopupVisible(!isPopupVisible);
-    alert("Why did you click this?");
-  };
+  // const handleButtonClick = () => {
+  //   setCounter(counter + Math.floor(Math.random() * 100) - 50); // Unpredictable increments
+  //   setPopupVisible(!isPopupVisible);
+  //   alert("Why did you click this?");
+  // };
 
   const handleInput = () => {
     if (inputRef.current){
       inputRef.current.style.transform = 
-        `rotate(${Math.floor(Math.random() * 360)}deg) translate(${Math.floor(Math.random() * 80)}vw,${Math.floor(Math.random()*80)}vh)`;
+        `rotate(${Math.floor(Math.random() * 360)}deg) translate(${Math.floor(Math.random() * 10)}vw,${Math.floor(Math.random()*10)}vh)`;
     }
   }
   
@@ -30,8 +29,10 @@ function WorstUIEver() {
         <div className='items-center justify-center'>
         <h1 className="text-8xl rotate-[``]">It's what it's</h1>
         <form className='relative'>
+          <label htmlFor="email">Your email</label>
           <input 
-            type="text" 
+            name="email"
+            type="email" 
             ref={inputRef} 
             onInput={handleInput}
             className='bg-transparent transition-transform duration-500 focus:rotate-180 absolute'
@@ -41,6 +42,9 @@ function WorstUIEver() {
             }}
             >
             </input>
+            {/* <button> */}
+              {/* submit */}
+            {/* </button> */}
         </form>
         </div>
       </main>
